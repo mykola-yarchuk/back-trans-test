@@ -1,9 +1,15 @@
-import dotenv from 'dotenv-safe';
-import { func } from '@src/helpers/sample';
-import { DEFAULT } from '@src/helpers/constants';
+import { createServer } from '@/createServer';
 
-dotenv.config();
+async function main() {
+  const port = process.env.PORT;
+  const { app } = await createServer();
 
-console.log('Default', DEFAULT);
+  app.listen(port, () => {
+    console.log(`HTTP server available on http://localhost:${port}/`);
+  });
+}
 
-console.log(func(5, 5));
+main().catch((err) => {
+  console.log(err);
+  process.exit(1);
+});
