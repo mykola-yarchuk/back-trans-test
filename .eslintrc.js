@@ -24,16 +24,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'no-console': 'off',
-    'import/order': [
-      'error',
-      {
-        'newlines-between': 'never',
-        groups: [
-          ['builtin', 'external'],
-          ['internal', 'parent', 'sibling', 'index'],
-        ]
-      }
-    ],
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
   settings: {
     'import/parsers': {
