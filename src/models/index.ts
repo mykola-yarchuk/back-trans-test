@@ -1,9 +1,12 @@
 import { Sequelize } from 'sequelize-typescript';
+import { Transport } from '@/models/Transport';
+import { Route } from '@/models/Route';
 
 const config = require('../../config/config')[process.env.NODE_ENV as string];
 
 const models = [
-  null, // models goes here
+  Transport,
+  Route,
 ];
 
 export const initSequelize = async () => {
